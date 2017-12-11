@@ -11,7 +11,7 @@ class PingPongVerticleSpec extends Specification {
   @Shared String baseDir = "com/makingdevs/vertx"
   @Shared String verticleName = "ReceiverVerticle.groovy"
   @Shared String verticleId
-  PollingConditions conditions = new PollingConditions(timeout: 10, initialDelay: 1.5, factor: 1.25)
+  PollingConditions conditions = new PollingConditions()
 
   def setupSpec() {
     vertx = Vertx.vertx()
