@@ -8,6 +8,7 @@ repositories {
 dependencies {
   compile 'org.slf4j:slf4j-api:1.7.21'
   compile "io.vertx:vertx-lang-groovy:3.5.0"
+  compile 'ch.qos.logback:logback-classic:1.2.3'
   testCompile "junit:junit:4.12"
   testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }

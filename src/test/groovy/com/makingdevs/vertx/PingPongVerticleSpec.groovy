@@ -30,13 +30,21 @@ class PingPongVerticleSpec extends Specification {
     }
   }
 
-  def "Simple specification"(){
+  def "Making Ping to a Verticle"(){
     given:
       def message = "Ping!"
+      def response = ""
+    and:
+      vertx.eventBus().consumer("com.makingdevs.pong") { msg ->
+        response = msg.body()
+      }
     when:
-      def size = message.size()
+      vertx.eventBus().send("com.makingdevs.ping", message)
+      conditions.eventually {
+        assert response == "Pong!"
+      }
     then:
-      size == 5
+      noExceptionThrown()
   }
 
 }
