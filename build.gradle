@@ -13,6 +13,8 @@ dependencies {
   testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
 
+// This is useful for Spock and Vert.x,
+// to identify the files where the Vert.x API is used
 processResources {
   from 'src/main/groovy'
 }
